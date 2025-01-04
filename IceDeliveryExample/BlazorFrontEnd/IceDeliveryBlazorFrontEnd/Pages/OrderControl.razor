@@ -1,0 +1,57 @@
+﻿@page "/control"
+@using IceDeliveryBlazorFrontEnd.Services.IceDelivery.Model
+@inherits BasePage
+
+<PageTitle>Ice Delivery Control Panel</PageTitle>
+
+<h1>Ice Delivery Control Panel</h1>
+
+<p>Use this page to control the delivery of ice.</p>
+@* <AuthorizeView>
+    <Authorized> *@
+@if (orderData is null)
+{
+    <p>No order data available</p>
+}
+else
+{
+    <RadzenDataGrid @ref=@orderGrid
+                    Data=@orderData
+                    AllowColumnReorder=standardSettings.AllowColumnReorder
+                    AllowFiltering=standardSettings.AllowFiltering
+                    AllowColumnResize=standardSettings.AllowColumnResize
+                    AllowSorting=standardSettings.AllowSorting
+                    PageSize=standardSettings.PageSize
+                    AllowPaging=standardSettings.AllowPaging
+                    PagerHorizontalAlign=standardSettings.PagerHorizontalAlign
+                    GridLines=standardSettings.GridLines
+                    AllowAlternatingRows=standardSettings.AllowAlternatingRows
+                    ShowPagingSummary=standardSettings.ShowPagingSummary
+                    ColumnWidth=@standardSettings.ColumnWidth
+                    LogicalFilterOperator=standardSettings.LogicalFilterOperator
+                    SelectionMode=standardSettings.SelectionMode
+                    FilterMode=standardSettings.FilterMode
+                    FilterCaseSensitivity=standardSettings.FilterCaseSensitivity
+                    AllowColumnPicking=standardSettings.AllowColumnPicking
+                    PageSizeOptions=standardSettings.PageSizeOptions
+                    AllowRowSelectOnRowClick=standardSettings.AllowRowSelectOnRowClick>
+        <Columns>
+            <RadzenDataGridColumn Property="@nameof(Order.Id)" Title="Order" />
+            <RadzenDataGridColumn Property="@nameof(Order.CustomerName)" Title="Product ID" />
+            <RadzenDataGridColumn Property="@nameof(Order.QuantityInKg)" Title="Product Name" />
+            <RadzenDataGridColumn Property="@nameof(Order.DeliveryAddress)" Title="Min Bet" />
+            <RadzenDataGridColumn Property="@nameof(Order.OrderDate)" Title="Created At" FormatString="{0:dd/MM/yy H:mm:ss zzz}" />
+        </Columns>
+        <FooterTemplate>
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem;" Wrap="FlexWrap.Wrap">
+                <RadzenButton Text="Export XLS" Icon="grid_on" Click="@(args => DownloadFileFromStream("xls", orderGrid.View.AsQueryable(), "orders"))" />
+                <RadzenButton Text="Export CSV" Icon="wrap_text" Click="@(args => DownloadFileFromStream("csv", orderGrid.View.AsQueryable(), "orders"))" />
+            </RadzenStack>
+        </FooterTemplate>
+    </RadzenDataGrid>
+}
+@*     </Authorized>
+    <NotAuthorized>
+        <p>Access Denied</p>
+    </NotAuthorized>
+</AuthorizeView> *@

@@ -1,0 +1,50 @@
+﻿@inherits LayoutComponentBase
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<RadzenLayout style="position: relative">
+    <RadzenHeader>
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
+            <RadzenSidebarToggle Click="@(() => sidebarExpanded = !sidebarExpanded)" />
+            <RadzenLabel Style="margin-right: 10px" Text="Ice Delivery Control Panel" />
+        </RadzenStack>
+    </RadzenHeader>
+    <RadzenSidebar Responsive="false" @bind-Expanded="@sidebarExpanded" style="position: absolute">
+        <RadzenPanelMenu>
+            <RadzenPanelMenuItem Text="Home" Icon="home" Path="" Click="SidebarChange" />
+            <RadzenAccordion>
+                <Items>
+                    <RadzenAccordionItem Text="Order Control" Icon="smart_toy" CollapseTitle="Collapse Control."
+                                         ExpandTitle="Expand Control." CollapseAriaLabel="Collapse the Control details."
+                                         ExpandAriaLabel="Expand the Control Panel.">
+                        <RadzenPanelMenuItem Text="Orders" Icon="inventory_2" Path="control" Click="SidebarChange" />
+                    </RadzenAccordionItem>
+                </Items>
+            </RadzenAccordion>
+        </RadzenPanelMenu>
+    </RadzenSidebar>
+    <RadzenBody>
+        <div class="rz-p-4">
+            @Body
+        </div>
+    </RadzenBody>
+    <RadzenFooter>
+        Matts Amazing Designs
+    </RadzenFooter>
+</RadzenLayout>
+
+@code {
+bool sidebarExpanded = false;
+
+void SidebarChange()
+{
+    sidebarExpanded = false;
+}
+
+}
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
