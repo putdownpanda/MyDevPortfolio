@@ -1,0 +1,76 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "ImageSorter/1.0.0": {
+        "dependencies": {
+          "HeyRed.ImageSharp.Heif": "2.1.3",
+          "SixLabors.ImageSharp": "3.1.6"
+        },
+        "runtime": {
+          "ImageSorter.dll": {}
+        }
+      },
+      "HeyRed.ImageSharp.Heif/2.1.3": {
+        "dependencies": {
+          "LibHeifSharp": "3.0.0",
+          "SixLabors.ImageSharp": "3.1.6"
+        },
+        "runtime": {
+          "lib/net6.0/ImageSharp.Heif.dll": {
+            "assemblyVersion": "2.1.3.0",
+            "fileVersion": "2.1.3.0"
+          }
+        }
+      },
+      "LibHeifSharp/3.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/LibHeifSharp.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/3.1.6": {
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.1.6.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ImageSorter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HeyRed.ImageSharp.Heif/2.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dFgUvcxhnBNtrCcYdoZVYqIrUcFfP85FGAQrj22SSCQdvZY2G0lSK8egz0YVKm8RgIVfvo9nAZUuxLYfxcD/Uw==",
+      "path": "heyred.imagesharp.heif/2.1.3",
+      "hashPath": "heyred.imagesharp.heif.2.1.3.nupkg.sha512"
+    },
+    "LibHeifSharp/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UvIJneX0WkNYudWU0NOlcXkL06QrWkciQgC4hKVeM/U5PRqNNWog8xo1bhFGGmEVFLJpxipgu9UDNKXauc7z9Q==",
+      "path": "libheifsharp/3.0.0",
+      "hashPath": "libheifsharp.3.0.0.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp/3.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dHQ5jugF9v+5/LCVHCWVzaaIL6WOehqJy6eju/0VFYFPEj2WtqkGPoEV9EVQP83dHsdoqYaTuWpZdwAd37UwfA==",
+      "path": "sixlabors.imagesharp/3.1.6",
+      "hashPath": "sixlabors.imagesharp.3.1.6.nupkg.sha512"
+    }
+  }
+}

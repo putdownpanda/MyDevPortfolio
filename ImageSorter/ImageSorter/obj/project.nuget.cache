@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "CdzQUjxjUOI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\matth\\source\\repos\\ImageSorter\\ImageSorter\\ImageSorter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\matth\\.nuget\\packages\\heyred.imagesharp.heif\\2.1.3\\heyred.imagesharp.heif.2.1.3.nupkg.sha512",
+    "C:\\Users\\matth\\.nuget\\packages\\libheifsharp\\3.0.0\\libheifsharp.3.0.0.nupkg.sha512",
+    "C:\\Users\\matth\\.nuget\\packages\\sixlabors.imagesharp\\3.1.6\\sixlabors.imagesharp.3.1.6.nupkg.sha512"
+  ],
+  "logs": []
+}
