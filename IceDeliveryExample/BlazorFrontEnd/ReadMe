@@ -1,1 +1,5 @@
-This is a simple blazor server side front end to interact with the Rest API
+This is a simple blazor server side front end to interact with the Rest API. 
+
+The API calls on the Blazor side are way overkill for such a simple REST API, however this is easily extendable for multiple APIs in the backend.
+Additionally the fileStructure makes it easier and cleaner to differentiate between APIs, Message Queues and direct DB interactions, which i may implement at a later date.
+
