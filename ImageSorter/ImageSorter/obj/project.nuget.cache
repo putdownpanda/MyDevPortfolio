@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "CdzQUjxjUOI=",
+  "dgSpecHash": "xmDF1Q+MEF8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\matth\\source\\repos\\ImageSorter\\ImageSorter\\ImageSorter.csproj",
+  "projectFilePath": "C:\\Users\\matth\\source\\repos\\MyDevPortfolio\\ImageSorter\\ImageSorter\\ImageSorter.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matth\\.nuget\\packages\\heyred.imagesharp.heif\\2.1.3\\heyred.imagesharp.heif.2.1.3.nupkg.sha512",
     "C:\\Users\\matth\\.nuget\\packages\\libheifsharp\\3.0.0\\libheifsharp.3.0.0.nupkg.sha512",
+    "C:\\Users\\matth\\.nuget\\packages\\mediainfo.core.native\\21.9.1\\mediainfo.core.native.21.9.1.nupkg.sha512",
+    "C:\\Users\\matth\\.nuget\\packages\\mediainfo.wrapper.core\\21.9.3\\mediainfo.wrapper.core.21.9.3.nupkg.sha512",
+    "C:\\Users\\matth\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.2\\microsoft.extensions.logging.abstractions.6.0.2.nupkg.sha512",
     "C:\\Users\\matth\\.nuget\\packages\\sixlabors.imagesharp\\3.1.6\\sixlabors.imagesharp.3.1.6.nupkg.sha512"
   ],
   "logs": []

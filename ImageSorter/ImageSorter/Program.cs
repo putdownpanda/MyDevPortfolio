@@ -1,107 +1,99 @@
-﻿using System;
+﻿using ImageSorter.Controllers;
+using ImageSorter.Model;
+using System;
 using System.Globalization;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.PixelFormats;
-
-Console.WriteLine("Enter the path to the images");
-string imagesPath = Console.ReadLine();
-Console.WriteLine($"The path you entered is {imagesPath}");
-
-Console.WriteLine("Enter the path to the folder you want to move the images to");
-Console.WriteLine("If the folder does not exist it will be created");
-string destinationPath = Console.ReadLine();
-Console.WriteLine($"The path you entered is {destinationPath}");
-// Ensure the destination directory exists
-Directory.CreateDirectory(destinationPath);
 
 var dateFormat = "yyyy-MM-dd";
+var dateTimeFormat = "yyyy-MM-dd/hh:mm:ss";
+
+Console.WriteLine("Welcome to the Image&Video Sorter.");
+Console.WriteLine("This program will sort images and videos based on the date taken.");
+Console.WriteLine($"DateTime formats can be either {dateTimeFormat} or {dateFormat}.");
+Console.WriteLine("enter as many date ranges as you want to sort the images and videos by. Type 'n' when all lines are entered.");
+Console.WriteLine("Enter the files in either of the following formats:SourcePath yyyy-MM-dd-hh:mm:ss/yyyy-MM-dd-hh:mm:ss DestinationPath");
+
 CultureInfo provider = CultureInfo.InvariantCulture;
-
-var startDate = new DateTime();
-var endDate = new DateTime();
-
+List<Instruction> sortInstructions = new List<Instruction>();
+List<string> inputLines = new List<string>();
 while (true)
 {
-    try {
-        Console.WriteLine("Now Enter the date range you want to sort the images by");
-        Console.WriteLine("Enter the start date in the format yyyy-MM-dd");
-        string start = Console.ReadLine();
-        startDate = DateTime.ParseExact(start, dateFormat, provider);
-
-        Console.WriteLine("Enter the end date in the format yyyy-MM-dd");
-        string end = Console.ReadLine();
-        endDate = DateTime.ParseExact(end, dateFormat, provider);
+    string line = Console.ReadLine();
+    if (line == "n")
+    {
         break;
     }
-    catch (Exception ex)
-    {        
-        Console.WriteLine("The date you entered is not in the correct format");
-        Console.WriteLine("Please try again");
-    }
-    continue;
-}
-Console.WriteLine($"The date range you entered is {startDate} to {endDate}");
 
-//"C:\\Users\\matth\\Pictures\\Namibia 2024 November\\IMG_1540.JPG";
-//now i need to go to the folder and iterate through the folder
-DirectoryInfo directoryInfo = new DirectoryInfo(imagesPath);
-directoryInfo.EnumerateFiles();
-foreach (FileInfo file in directoryInfo.EnumerateFiles())
-{
-    //now a switch statement to check the file extension
-    switch (file.Extension)
+    string[] lineArray = line.Split(' ');
+    string sourcePath = lineArray[0];
+    string[] dates = lineArray[1].Split('/');
+    string startDate = dates[0];
+    string endDate = dates[1];
+    string destinationPath = lineArray[2];
+    if (sourcePath == null || startDate == null || endDate == null || destinationPath == null)
     {
-        case ".jpg":
+        Console.WriteLine($"Invalid input {line}. Please try again.");
+        continue;
+    }
+    string inputDateFormatStart = string.Empty;
+    string inputDateFormatEnd = string.Empty;
+    switch (startDate.Length)
+    {
+        case 10:
+            inputDateFormatStart = dateFormat;
             break;
-        case ".JPG":
-            break;
-        case ".jpeg":
-            break;
-        case ".JPEG":
-            break;
-        case ".png":
-            break;
-        case ".PNG":
+        case 19:
+            inputDateFormatStart = dateTimeFormat;
             break;
         default:
+            Console.WriteLine($"Invalid input {line}. Please try again.");
             continue;
     }
-
-    using (Image<Rgba32> image = Image.Load<Rgba32>(file.FullName))
+    switch (endDate.Length)
     {
-        ImageMetadata metadata = image.Metadata;
-        var exifProfile = metadata.ExifProfile;
-
-        if (exifProfile != null)
-        {
-            if (exifProfile.TryGetValue(SixLabors.ImageSharp.Metadata.Profiles.Exif.ExifTag.DateTimeOriginal, out var dateTimeOriginal))
-            {
-                string dateTimeString = dateTimeOriginal.ToString();
-                if (DateTime.TryParseExact(dateTimeString, "yyyy:MM:dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateTime))
-                {
-                    Console.WriteLine($"Date and Time Original: {dateTime}");
-                    if (startDate <= dateTime && dateTime <= endDate)
-                    {
-                        // Move the file to the correct folder
-                        string destinationFilePath = Path.Combine(destinationPath, file.Name);
-                        File.Move(file.FullName, destinationFilePath);
-                        Console.WriteLine($"Moved {file.Name} to {destinationPath}");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Failed to parse DateTimeOriginal.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("DateTimeOriginal tag not found.");
-            }
-        }
-        else
-        {
-            Console.WriteLine("No EXIF profile found.");
-        }
+        case 10:
+            inputDateFormatEnd = dateFormat;
+            continue;
+        case 19:
+            inputDateFormatEnd = dateTimeFormat;
+            break;
+        default:
+            Console.WriteLine($"Invalid input {line}. Please try again.");
+            continue;
     }
+    Instruction instruction = new Instruction(sourcePath
+        , DateTime.ParseExact(startDate, inputDateFormatStart, provider)
+        , DateTime.ParseExact(endDate, inputDateFormatEnd, provider)
+        , destinationPath);
+    sortInstructions.Add(instruction);
 }
+
+foreach (var instructions in sortInstructions)
+{
+    Console.WriteLine("The Following Instructions have been entered:");
+    Console.WriteLine($"SourcePath: {instructions.SourcePath} StartDate: {instructions.StartDate} EndDate: {instructions.EndDate} DestinationPath: {instructions.DestinationPath}");
+
+}
+Console.WriteLine("Continue? y/n");
+if(Console.ReadLine() == "y")
+{
+    Console.WriteLine("Continuing");
+}
+else
+{
+    Console.WriteLine("Exiting");
+    Environment.Exit(0);
+}
+ImageReader imageReader = new ImageReader();
+VideoReader videoReader = new VideoReader();
+FileMover fileMover = new FileMover();
+foreach (var instruction in sortInstructions)
+{
+    instruction.Files = imageReader.SortImages(instruction.SourcePath,instruction.StartDate,instruction.EndDate);
+    Console.WriteLine("Images sorted");
+    Console.WriteLine("Now Sorting Videos");
+    instruction.Files.AddRange(videoReader.VideoList(instruction.SourcePath,instruction.StartDate, instruction.EndDate));
+    Console.WriteLine("Videos sorted");
+    
+    fileMover.SortFiles(instruction.DestinationPath,instruction.Files);
+}
+

@@ -28,6 +28,148 @@
           }
         }
       },
+      "MediaInfo.Core.Native/21.9.1": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/centos.7-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "centos.7-x64"
+          },
+          "runtimes/centos.8-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "centos.8-x64"
+          },
+          "runtimes/debian.10-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "debian.10-x64"
+          },
+          "runtimes/debian.11-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "debian.11-x64"
+          },
+          "runtimes/debian.9-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "debian.9-x64"
+          },
+          "runtimes/fedora.32-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "fedora.32-x64"
+          },
+          "runtimes/fedora.33-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "fedora.33-x64"
+          },
+          "runtimes/fedora.34-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "fedora.34-x64"
+          },
+          "runtimes/opensuse-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "opensuse-x64"
+          },
+          "runtimes/opensuse.15.1-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "opensuse.15.1-x64"
+          },
+          "runtimes/osx.10.15-x64/native/libmediainfo.dylib": {
+            "assetType": "native",
+            "rid": "osx.10.15-x64"
+          },
+          "runtimes/osx.11-x64/native/libmediainfo.dylib": {
+            "assetType": "native",
+            "rid": "osx.11-x64"
+          },
+          "runtimes/rhel.7-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "rhel.7-x64"
+          },
+          "runtimes/rhel.8-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "rhel.8-x64"
+          },
+          "runtimes/ubuntu.16.04-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "ubuntu.16.04-x64"
+          },
+          "runtimes/ubuntu.18.04-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "ubuntu.18.04-x64"
+          },
+          "runtimes/ubuntu.20.04-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "ubuntu.20.04-x64"
+          },
+          "runtimes/ubuntu.21.04-x64/native/libmediainfo.so": {
+            "assetType": "native",
+            "rid": "ubuntu.21.04-x64"
+          },
+          "runtimes/win-x64/native/libcrypto-3-x64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libcurl.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libmediainfo.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libssl-3-x64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/libcrypto-3.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libcurl.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libmediainfo.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libssl-3.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "MediaInfo.Wrapper.Core/21.9.3": {
+        "type": "package",
+        "dependencies": {
+          "MediaInfo.Core.Native": "21.9.1",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.2"
+        },
+        "compile": {
+          "lib/net6.0/MediaInfo.Wrapper.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MediaInfo.Wrapper.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/6.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
       "SixLabors.ImageSharp/3.1.6": {
         "type": "package",
         "compile": {
@@ -74,6 +216,119 @@
         "libheifsharp.nuspec"
       ]
     },
+    "MediaInfo.Core.Native/21.9.1": {
+      "sha512": "2jXjoFCAzI2XKRPGZNzynIebAlKSvMhUzseNjH06TrS74Kb0F4mr0RF881Z+k6POrNdt/I+42B/TJu98UL39Dg==",
+      "type": "package",
+      "path": "mediainfo.core.native/21.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "History_Curl.txt",
+        "History_MediaInfo.txt",
+        "History_OpenSSL.md",
+        "mediainfo.core.native.21.9.1.nupkg.sha512",
+        "mediainfo.core.native.nuspec",
+        "runtimes/centos.7-x64/native/libmediainfo.so",
+        "runtimes/centos.8-x64/native/libmediainfo.so",
+        "runtimes/debian.10-x64/native/libmediainfo.so",
+        "runtimes/debian.11-x64/native/libmediainfo.so",
+        "runtimes/debian.9-x64/native/libmediainfo.so",
+        "runtimes/fedora.32-x64/native/libmediainfo.so",
+        "runtimes/fedora.33-x64/native/libmediainfo.so",
+        "runtimes/fedora.34-x64/native/libmediainfo.so",
+        "runtimes/opensuse-x64/native/libmediainfo.so",
+        "runtimes/opensuse.15.1-x64/native/libmediainfo.so",
+        "runtimes/osx.10.15-x64/native/libmediainfo.dylib",
+        "runtimes/osx.11-x64/native/libmediainfo.dylib",
+        "runtimes/rhel.7-x64/native/libmediainfo.so",
+        "runtimes/rhel.8-x64/native/libmediainfo.so",
+        "runtimes/ubuntu.16.04-x64/native/libmediainfo.so",
+        "runtimes/ubuntu.18.04-x64/native/libmediainfo.so",
+        "runtimes/ubuntu.20.04-x64/native/libmediainfo.so",
+        "runtimes/ubuntu.21.04-x64/native/libmediainfo.so",
+        "runtimes/win-x64/native/libcrypto-3-x64.dll",
+        "runtimes/win-x64/native/libcurl.dll",
+        "runtimes/win-x64/native/libmediainfo.dll",
+        "runtimes/win-x64/native/libssl-3-x64.dll",
+        "runtimes/win-x86/native/libcrypto-3.dll",
+        "runtimes/win-x86/native/libcurl.dll",
+        "runtimes/win-x86/native/libmediainfo.dll",
+        "runtimes/win-x86/native/libssl-3.dll"
+      ]
+    },
+    "MediaInfo.Wrapper.Core/21.9.3": {
+      "sha512": "CJj9kxRIyVJ3BG42GzMNfM3q20mzuUDimec0FZ83uMN9eyw+RtH+GezY64FG4aqTTJy6LiIyldmo5YXpaz/l1Q==",
+      "type": "package",
+      "path": "mediainfo.wrapper.core/21.9.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "MediaInfo_90x90.png",
+        "lib/net5.0/MediaInfo.Wrapper.Core.dll",
+        "lib/net5.0/MediaInfo.Wrapper.Core.xml",
+        "lib/net6.0/MediaInfo.Wrapper.Core.dll",
+        "lib/net6.0/MediaInfo.Wrapper.Core.xml",
+        "lib/netstandard2.0/MediaInfo.Wrapper.Core.dll",
+        "lib/netstandard2.0/MediaInfo.Wrapper.Core.xml",
+        "lib/netstandard2.1/MediaInfo.Wrapper.Core.dll",
+        "lib/netstandard2.1/MediaInfo.Wrapper.Core.xml",
+        "mediainfo.wrapper.core.21.9.3.nupkg.sha512",
+        "mediainfo.wrapper.core.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Logging.Abstractions/6.0.2": {
+      "sha512": "pwXCZKaA7m5wgmCj49dW+H1RPSY7U62SKLTQYCcavf/k3Nyt/WnBgAjG4jMGnwy9rElfAZ2KvxvM5CJzJWG0hg==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.abstractions/6.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn3.11/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn3.11/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "build/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net461/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "microsoft.extensions.logging.abstractions.6.0.2.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "SixLabors.ImageSharp/3.1.6": {
       "sha512": "dHQ5jugF9v+5/LCVHCWVzaaIL6WOehqJy6eju/0VFYFPEj2WtqkGPoEV9EVQP83dHsdoqYaTuWpZdwAd37UwfA==",
       "type": "package",
@@ -94,6 +349,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "HeyRed.ImageSharp.Heif >= 2.1.3",
+      "MediaInfo.Wrapper.Core >= 21.9.3",
       "SixLabors.ImageSharp >= 3.1.6"
     ]
   },
@@ -104,11 +360,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matth\\source\\repos\\ImageSorter\\ImageSorter\\ImageSorter.csproj",
+      "projectUniqueName": "C:\\Users\\matth\\source\\repos\\MyDevPortfolio\\ImageSorter\\ImageSorter\\ImageSorter.csproj",
       "projectName": "ImageSorter",
-      "projectPath": "C:\\Users\\matth\\source\\repos\\ImageSorter\\ImageSorter\\ImageSorter.csproj",
+      "projectPath": "C:\\Users\\matth\\source\\repos\\MyDevPortfolio\\ImageSorter\\ImageSorter\\ImageSorter.csproj",
       "packagesPath": "C:\\Users\\matth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matth\\source\\repos\\ImageSorter\\ImageSorter\\obj\\",
+      "outputPath": "C:\\Users\\matth\\source\\repos\\MyDevPortfolio\\ImageSorter\\ImageSorter\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -150,6 +406,10 @@
           "HeyRed.ImageSharp.Heif": {
             "target": "Package",
             "version": "[2.1.3, )"
+          },
+          "MediaInfo.Wrapper.Core": {
+            "target": "Package",
+            "version": "[21.9.3, )"
           },
           "SixLabors.ImageSharp": {
             "target": "Package",
